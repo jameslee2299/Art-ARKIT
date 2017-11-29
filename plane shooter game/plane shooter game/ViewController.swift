@@ -32,7 +32,8 @@ class ViewController: UIViewController {
         //let planeScene = SCNScene(named: ")
         let planeScene = SCNScene(named: "art.scnassets/Plane.scn")
         let planeNode = planeScene?.rootNode.childNode(withName: "plane", recursively: false)
-        planeNode?.position = SCNVector3(0,0,-1)
+        planeNode?.position = SCNVector3(0,0,0.1)
+        planeNode?.scale = SCNVector3(0.01, 0.01, 0.01)
         self.sceneView.scene.rootNode.addChildNode(planeNode!)
     }
 
