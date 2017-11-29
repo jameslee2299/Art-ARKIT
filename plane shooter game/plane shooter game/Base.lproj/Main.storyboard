@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="plane_shooter_game" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQc-za-vy8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </arscnView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xQc-za-vy8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="65p-X6-JIT"/>
+                            <constraint firstItem="xQc-za-vy8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="B2n-w7-5ID"/>
+                            <constraint firstItem="xQc-za-vy8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="I2V-ke-2KR"/>
+                            <constraint firstItem="xQc-za-vy8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="J8U-s7-yOz"/>
+                            <constraint firstItem="xQc-za-vy8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Oop-RV-IHP"/>
+                            <constraint firstItem="xQc-za-vy8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Rfd-t5-EWw"/>
+                            <constraint firstItem="xQc-za-vy8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WQ6-WK-bir"/>
+                            <constraint firstItem="xQc-za-vy8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Wer-Zz-Dc0"/>
+                            <constraint firstItem="xQc-za-vy8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cSA-ts-5hg"/>
+                            <constraint firstItem="xQc-za-vy8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cdP-cB-vMk"/>
+                            <constraint firstItem="xQc-za-vy8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="m7H-fn-yN4"/>
+                            <constraint firstItem="xQc-za-vy8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="pKu-z9-Y4r"/>
+                            <constraint firstItem="xQc-za-vy8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pZb-Ow-cj8"/>
+                            <constraint firstItem="xQc-za-vy8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tIk-SE-T3z"/>
+                            <constraint firstItem="xQc-za-vy8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="yN1-Gq-Yxh"/>
+                            <constraint firstItem="xQc-za-vy8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zvc-Ng-tbe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="xQc-za-vy8" id="XX7-8v-jMy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-100" y="130"/>
+        </scene>
+    </scenes>
+</document>
