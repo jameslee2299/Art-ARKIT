@@ -21,6 +21,18 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQc-za-vy8">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTJ-5v-E9c">
+                                <rect key="frame" x="20" y="607" width="80" height="40"/>
+                                <color key="backgroundColor" red="0.99475159731182128" green="1" blue="0.8676477315742509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Xxc-ra-cdQ"/>
+                                    <constraint firstAttribute="width" constant="80" id="sGY-2M-Z4t"/>
+                                </constraints>
+                                <state key="normal" title="Planez"/>
+                                <connections>
+                                    <action selector="addPlane:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9cb-Lp-yhv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -32,8 +44,10 @@
                             <constraint firstItem="xQc-za-vy8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Rfd-t5-EWw"/>
                             <constraint firstItem="xQc-za-vy8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WQ6-WK-bir"/>
                             <constraint firstItem="xQc-za-vy8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Wer-Zz-Dc0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PTJ-5v-E9c" secondAttribute="bottom" constant="20" id="bBr-yL-UbN"/>
                             <constraint firstItem="xQc-za-vy8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cSA-ts-5hg"/>
                             <constraint firstItem="xQc-za-vy8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cdP-cB-vMk"/>
+                            <constraint firstItem="PTJ-5v-E9c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kCr-dk-VOz"/>
                             <constraint firstItem="xQc-za-vy8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="m7H-fn-yN4"/>
                             <constraint firstItem="xQc-za-vy8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="pKu-z9-Y4r"/>
                             <constraint firstItem="xQc-za-vy8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pZb-Ow-cj8"/>
@@ -49,7 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-100" y="130"/>
+            <point key="canvasLocation" x="-100" y="129.98500749625188"/>
         </scene>
     </scenes>
 </document>

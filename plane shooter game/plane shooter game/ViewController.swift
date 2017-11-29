@@ -23,7 +23,23 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func reset(  sender: Any) {
+        self.addPlaneNode()
+    }
 
+    func addPlaneNode() {
+        //let planeScene = SCNScene(named: ")
+        let planeScene = SCNScene(named: "art.scnassets/Plane.scn")
+        let planeNode = planeScene?.rootNode.childNode(withName: "plane", recursively: false)
+        planeNode?.position = SCNVector3(0,0,-1)
+        self.sceneView.scene.rootNode.addChildNode(planeNode!)
+    }
 
+    @IBAction func addPlane(_ sender: Any) {
+        addPlaneNode()
+    }
+    
+    
 }
 
