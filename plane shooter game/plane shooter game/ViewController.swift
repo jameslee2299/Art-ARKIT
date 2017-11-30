@@ -35,6 +35,13 @@ class ViewController: UIViewController {
         planeNode?.scale = SCNVector3(0.01, 0.01, 0.01)     //down scales the plane by 100
         self.sceneView.scene.rootNode.addChildNode(planeNode!)
     }
+    
+    func addAlienNode() {
+        let alienScene = SCNScene(named: "art.scnassets/alien.scn")
+        let alienNode = alienScene?.rootNode.childNode(withName: "alien", recursively: false)
+        alienNode?.position = SCNVector3(0.3, 0, 0.3)
+        self.sceneView.scene.rootNode.addChildNode(alienNode!)
+    }
 
     @IBAction func addPlane(_ sender: Any) {        //this is the button caller for 'planez' if the button is clicked this gets called
         self.addPlaneNode()
