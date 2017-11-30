@@ -54,53 +54,43 @@ class ViewController: UIViewController {
 
     //timer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: self, selector: "rapidFire", userInfo: nil, repeats: true)
     
+    
+    
     @IBAction func upButtonDown(_ sender: Any) {
         up = true
     }
-    @IBAction func upButtonUpInside(_ sender: Any) {
+    @IBAction func upButtonUp(_ sender: Any) {
         up = false
     }
-    @IBAction func upButtonUpOutside(_ sender: Any) {
-        up = false
-    }
+
     
     @IBAction func rightButtonDown(_ sender: Any) {
         right = true
     }
-    @IBAction func rightButtonUpInside(_ sender: Any) {
+    @IBAction func rightButtonUp(_ sender: Any) {
         right = false
     }
-    @IBAction func rightButtonUpOutside(_ sender: Any) {
-        right = false
-    }
-    
+
     @IBAction func downButtonDown(_ sender: Any) {
         down = true
     }
-    @IBAction func downButtonUpInside(_ sender: Any) {
+    @IBAction func downButtonUp(_ sender: Any) {
         down = false
     }
-    @IBAction func downButtonUpOutside(_ sender: Any) {
-        down = false
-    }
+
     
     @IBAction func leftButtonDown(_ sender: Any) {
         left = true
     }
-    @IBAction func leftButtonUpInside(_ sender: Any) {
+    @IBAction func leftButtonUp(_ sender: Any) {
         left = false
     }
-    @IBAction func leftButtonUpOutside(_ sender: Any) {
-        left = false
-    }
+
     
     @IBAction func planeForwardButtonDown(_ sender: Any) {
         forward = true
     }
-    @IBAction func planeForwardButtonUpInside(_ sender: Any) {
-        forward = false
-    }
-    @IBAction func planeForwardButtonUpOutside(_ sender: Any) {
+    @IBAction func planeForwardButtonUp(_ sender: Any) {
         forward = false
     }
     

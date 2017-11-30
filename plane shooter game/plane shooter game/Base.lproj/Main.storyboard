@@ -56,8 +56,8 @@
                                 <state key="normal" title="&lt;"/>
                                 <connections>
                                     <action selector="leftButtonDown:" destination="BYZ-38-t0r" eventType="touchDown" id="GS3-rg-bYb"/>
-                                    <action selector="leftButtonUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZpA-5W-DVu"/>
-                                    <action selector="leftButtonUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="8Um-mN-5Nt"/>
+                                    <action selector="leftButtonUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QWV-lb-6qw"/>
+                                    <action selector="leftButtonUp:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="VfN-Rl-FPt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8sU-1q-uV9">
@@ -70,8 +70,8 @@
                                 <state key="normal" title="&gt;"/>
                                 <connections>
                                     <action selector="rightButtonDown:" destination="BYZ-38-t0r" eventType="touchDown" id="VTw-iP-bw2"/>
-                                    <action selector="rightButtonUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W0o-jJ-JPy"/>
-                                    <action selector="rightButtonUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="frt-Ly-NJ8"/>
+                                    <action selector="rightButtonUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JdD-UJ-BaP"/>
+                                    <action selector="rightButtonUp:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="r3a-XC-eg5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDv-Ue-Sa8">
@@ -84,8 +84,8 @@
                                 <state key="normal" title="v"/>
                                 <connections>
                                     <action selector="downButtonDown:" destination="BYZ-38-t0r" eventType="touchDown" id="8vc-x4-8WV"/>
-                                    <action selector="downButtonUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zlm-Mv-U5H"/>
-                                    <action selector="downButtonUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="iJe-5T-ulC"/>
+                                    <action selector="downButtonUp:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="TmM-uj-Zw6"/>
+                                    <action selector="downButtonUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l4N-SX-db0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wX-tp-wrq">
@@ -98,8 +98,8 @@
                                 <state key="normal" title="^"/>
                                 <connections>
                                     <action selector="upButtonDown:" destination="BYZ-38-t0r" eventType="touchDown" id="6Cl-ve-WdZ"/>
-                                    <action selector="upButtonDownInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hcf-DS-vlE"/>
-                                    <action selector="upButtonUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="8SB-M6-VKa"/>
+                                    <action selector="upButtonUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mnj-wL-mUN"/>
+                                    <action selector="upButtonUp:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="aZA-Oi-hjb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGT-jO-hyb">
