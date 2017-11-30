@@ -12,8 +12,8 @@
 		7A04D1421FCE7B9F0084AB35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A04D1401FCE7B9F0084AB35 /* Main.storyboard */; };
 		7A04D1441FCE7B9F0084AB35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A04D1431FCE7B9F0084AB35 /* Assets.xcassets */; };
 		7A04D1471FCE7B9F0084AB35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A04D1451FCE7B9F0084AB35 /* LaunchScreen.storyboard */; };
-		7A2278801FCE886100AAEC25 /* textures in Resources */ = {isa = PBXBuildFile; fileRef = 7A22787F1FCE886100AAEC25 /* textures */; };
 		7A22788A1FCE94A200AAEC25 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A2278891FCE94A200AAEC25 /* art.scnassets */; };
+		7AB442561FD0903700DD3617 /* textures in Resources */ = {isa = PBXBuildFile; fileRef = 7AB442551FD0903600DD3617 /* textures */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +24,8 @@
 		7A04D1431FCE7B9F0084AB35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A04D1461FCE7B9F0084AB35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A04D1481FCE7B9F0084AB35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7A22787F1FCE886100AAEC25 /* textures */ = {isa = PBXFileReference; lastKnownFileType = folder; name = textures; path = "../../../Desktop/Jet Fighter/SC Jet Fighter/textures"; sourceTree = "<group>"; };
 		7A2278891FCE94A200AAEC25 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		7AB442551FD0903600DD3617 /* textures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = textures; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +58,7 @@
 		7A04D13B1FCE7B9F0084AB35 /* plane shooter game */ = {
 			isa = PBXGroup;
 			children = (
-				7A22787F1FCE886100AAEC25 /* textures */,
+				7AB442551FD0903600DD3617 /* textures */,
 				7A04D13C1FCE7B9F0084AB35 /* AppDelegate.swift */,
 				7A04D13E1FCE7B9F0084AB35 /* ViewController.swift */,
 				7A04D1401FCE7B9F0084AB35 /* Main.storyboard */,
@@ -130,7 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A04D1471FCE7B9F0084AB35 /* LaunchScreen.storyboard in Resources */,
-				7A2278801FCE886100AAEC25 /* textures in Resources */,
+				7AB442561FD0903700DD3617 /* textures in Resources */,
 				7A22788A1FCE94A200AAEC25 /* art.scnassets in Resources */,
 				7A04D1441FCE7B9F0084AB35 /* Assets.xcassets in Resources */,
 				7A04D1421FCE7B9F0084AB35 /* Main.storyboard in Resources */,
