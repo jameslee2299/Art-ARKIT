@@ -11,13 +11,14 @@ import ARKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var sceneView: ARSCNView!
-    //var timer: Timer!
+    var timer: Timer?
     var forward = false
     var up = false
     var left = false
     var right = false
     var down = false
     let configuration = ARWorldTrackingConfiguration()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]  //used for debugging
@@ -33,13 +34,23 @@ class ViewController: UIViewController {
     @IBAction func reset(  sender: Any) {
         self.addPlaneNode()
     }
-
+    
+    @objc func actionTimer() {
+        if up || left || right || down || forward {
+            if right {
+                self.sceneView.scene.rootNode.childNode(withName: "plane", recursively:true)?.rotation = SCNVector4(0, 1, 0, 2)
+                //tempPlane?.rotation = SCNVector4(0, 1, 0, 2)
+            }
+        }
+    }
+    
     func addPlaneNode() {
         let planeScene = SCNScene(named: "art.scnassets/Plane.scn")     //this initializes the plane image
         let planeNode = planeScene?.rootNode.childNode(withName: "plane", recursively: false)       //initializes the node ('withName: "plane"' represents the name of the scenegraph located within the Plane.scn file it titles the object (DOES NOT REPRESENT THE FILE NAME)
         planeNode?.position = SCNVector3(0, 0.3, 0)       //0, 0, 0 represents the xyz graph origin
         planeNode?.scale = SCNVector3(0.01, 0.01, 0.01)     //down scales the plane by 100
         self.sceneView.scene.rootNode.addChildNode(planeNode!)
+        timer = Timer.scheduledTimer(timeInterval: 0.017, target: self, selector: #selector(ViewController.actionTimer), userInfo: nil, repeats: true)
     }
     
     func addAlienNode() {
@@ -53,8 +64,9 @@ class ViewController: UIViewController {
     }
 
     //timer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: self, selector: "rapidFire", userInfo: nil, repeats: true)
-    
-    
+
+    //var tempNode = self.sceneView.scene.rootNode.childNode(withName: "plane", recursively:true)
+    //this actually gets the plane within the scope
     
     @IBAction func upButtonDown(_ sender: Any) {
         up = true
