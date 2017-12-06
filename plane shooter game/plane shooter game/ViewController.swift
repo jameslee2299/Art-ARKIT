@@ -12,12 +12,14 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var sceneView: ARSCNView!
     var timer: Timer?
-    var forward = false
-    var up = false
-    var left = false
-    var right = false
-    var down = false
+    var forward = 0.0
+    var up = 0.0
+    var left = 0.0
+    var right = 0.0
+    var down = 0.0
     let configuration = ARWorldTrackingConfiguration()
+    var planeScene: SCNScene?
+    let timeInterval = 0.017
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,21 +38,20 @@ class ViewController: UIViewController {
     }
     
     @objc func actionTimer() {
-        if up || left || right || down || forward {
-            if right {
-                self.sceneView.scene.rootNode.childNode(withName: "plane", recursively:true)?.rotation = SCNVector4(0, 1, 0, 2)
-                //tempPlane?.rotation = SCNVector4(0, 1, 0, 2)
-            }
+        if up == 1 || left == 1 || right == 1 || down == 1 || forward == 1 {
+            //let position = self.sceneView.scene.rootNode.childNode(withName: "plane", recursively:true)?.position
+            self.sceneView.scene.rootNode.childNode(withName: "plane", recursively:true)?.runAction(SCNAction.rotateBy(x: CGFloat(0.1 * (down - up)), y: 0, z: CGFloat(0.1 * (left - right)), duration: timeInterval))
+
         }
     }
     
     func addPlaneNode() {
-        let planeScene = SCNScene(named: "art.scnassets/Plane.scn")     //this initializes the plane image
+        planeScene = SCNScene(named: "art.scnassets/Plane.scn")     //this initializes the plane image
         let planeNode = planeScene?.rootNode.childNode(withName: "plane", recursively: false)       //initializes the node ('withName: "plane"' represents the name of the scenegraph located within the Plane.scn file it titles the object (DOES NOT REPRESENT THE FILE NAME)
         planeNode?.position = SCNVector3(0, 0.3, 0)       //0, 0, 0 represents the xyz graph origin
         planeNode?.scale = SCNVector3(0.01, 0.01, 0.01)     //down scales the plane by 100
         self.sceneView.scene.rootNode.addChildNode(planeNode!)
-        timer = Timer.scheduledTimer(timeInterval: 0.017, target: self, selector: #selector(ViewController.actionTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(ViewController.actionTimer), userInfo: nil, repeats: true)
     }
     
     func addAlienNode() {
@@ -69,41 +70,41 @@ class ViewController: UIViewController {
     //this actually gets the plane within the scope
     
     @IBAction func upButtonDown(_ sender: Any) {
-        up = true
+        up = 1
     }
     @IBAction func upButtonUp(_ sender: Any) {
-        up = false
+        up = 0
     }
 
     
     @IBAction func rightButtonDown(_ sender: Any) {
-        right = true
+        right = 1
     }
     @IBAction func rightButtonUp(_ sender: Any) {
-        right = false
+        right = 0
     }
 
     @IBAction func downButtonDown(_ sender: Any) {
-        down = true
+        down = 1
     }
     @IBAction func downButtonUp(_ sender: Any) {
-        down = false
+        down = 0
     }
 
     
     @IBAction func leftButtonDown(_ sender: Any) {
-        left = true
+        left = 1
     }
     @IBAction func leftButtonUp(_ sender: Any) {
-        left = false
+        left = 0
     }
 
     
     @IBAction func planeForwardButtonDown(_ sender: Any) {
-        forward = true
+        forward = 1
     }
     @IBAction func planeForwardButtonUp(_ sender: Any) {
-        forward = false
+        forward = 0
     }
     
     
@@ -119,5 +120,12 @@ class ViewController: UIViewController {
         return CGFloat(arc4random()) / CGFloat(UINT32_MAX) * abs(firstNum - secondNum) + min(firstNum, secondNum)
     }
     
+    /*func +(left: SCNVector3, right: SCNVector3) -> SCNVector3 {
+        return SCNVector3Make(left.x + right.x, left.y + right.y, left.z + right.z)
+    }*/
+}
+
+func + (left: SCNVector4, right: SCNVector4) -> SCNVector4 {
+    return SCNVector4Make(left.x + right.x, left.y + right.y, left.z + right.z, left.w + right.w)
 }
 
