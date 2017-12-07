@@ -19,7 +19,8 @@ class ViewController: UIViewController {
     var down = 0.0
     let configuration = ARWorldTrackingConfiguration()
     var planeScene: SCNScene?
-    let timeInterval = 0.017
+    var planeNode: SCNNode?
+    let timeInterval = 0.018
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,14 +41,18 @@ class ViewController: UIViewController {
     @objc func actionTimer() {
         if up == 1 || left == 1 || right == 1 || down == 1 || forward == 1 {
             //let position = self.sceneView.scene.rootNode.childNode(withName: "plane", recursively:true)?.position
-            self.sceneView.scene.rootNode.childNode(withName: "plane", recursively:true)?.runAction(SCNAction.rotateBy(x: CGFloat(0.1 * (down - up)), y: 0, z: CGFloat(0.1 * (left - right)), duration: timeInterval))
-
+            //let rotation = planeNode?.rotation
+            planeNode?.runAction(SCNAction.rotate(by: .pi * 0.02, around: planeNode!.convertVector(SCNVector3(down - up, 0, left - right), to: planeNode!.parent), duration: TimeInterval(timeInterval)))
+                //By(x: CGFloat(0.1 * (down - up)), y: 0, z: CGFloat(0.1 * (left - right)), duration: timeInterval / 2))
+            //self.sceneView.scene.rootNode.childNode(withName: "plane", recursively:true)?
+            //self.sceneView.scene.rootNode.childNode(withName: "plane", recursively:true)?.position = position! + SCNVector3(0, 0.01, 0)
+            //.runAction(SCNAction.moveBy(x: 0, y: CGFloat(0.01 * forward), z: 0, duration: timeInterval / 2))
         }
     }
     
     func addPlaneNode() {
         planeScene = SCNScene(named: "art.scnassets/Plane.scn")     //this initializes the plane image
-        let planeNode = planeScene?.rootNode.childNode(withName: "plane", recursively: false)       //initializes the node ('withName: "plane"' represents the name of the scenegraph located within the Plane.scn file it titles the object (DOES NOT REPRESENT THE FILE NAME)
+        planeNode = planeScene?.rootNode.childNode(withName: "plane", recursively: false)       //initializes the node ('withName: "plane"' represents the name of the scenegraph located within the Plane.scn file it titles the object (DOES NOT REPRESENT THE FILE NAME)
         planeNode?.position = SCNVector3(0, 0.3, 0)       //0, 0, 0 represents the xyz graph origin
         planeNode?.scale = SCNVector3(0.01, 0.01, 0.01)     //down scales the plane by 100
         self.sceneView.scene.rootNode.addChildNode(planeNode!)
@@ -123,6 +128,9 @@ class ViewController: UIViewController {
     /*func +(left: SCNVector3, right: SCNVector3) -> SCNVector3 {
         return SCNVector3Make(left.x + right.x, left.y + right.y, left.z + right.z)
     }*/
+}
+func + (left: SCNVector3, right: SCNVector3) -> SCNVector3 {
+    return SCNVector3Make(left.x + right.x, left.y + right.y, left.z + right.z)
 }
 
 func + (left: SCNVector4, right: SCNVector4) -> SCNVector4 {
