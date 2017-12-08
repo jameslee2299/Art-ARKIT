@@ -43,6 +43,10 @@ class ViewController: UIViewController {
             //let position = self.sceneView.scene.rootNode.childNode(withName: "plane", recursively:true)?.position
             //let rotation = planeNode?.rotation
             planeNode?.runAction(SCNAction.rotate(by: .pi * 0.02, around: planeNode!.convertVector(SCNVector3(down - up, 0, left - right), to: planeNode!.parent), duration: TimeInterval(timeInterval)))
+            planeNode?.position = planeNode!.position + SCNVector3(planeNode!.worldTransform.m21 * -1.0, planeNode!.worldTransform.m22 * -1.0, planeNode!.worldTransform.m23 * -1.0)
+            //planeNode?.position = planeNode!.convertVector(SCNVector3(0, -0.01, 0), to: planeNode!.parent)
+            //.runAction(SCNAction.moveBy(x: 0, y: CGFloat(0.01 * forward), z: 0, duration: timeInterval / 2))
+            //planeNode?.position = planeNode!.convertVector(SCNVector3(0, -0.01 * up, 0), to: planeNode!.parent)
                 //By(x: CGFloat(0.1 * (down - up)), y: 0, z: CGFloat(0.1 * (left - right)), duration: timeInterval / 2))
             //self.sceneView.scene.rootNode.childNode(withName: "plane", recursively:true)?
             //self.sceneView.scene.rootNode.childNode(withName: "plane", recursively:true)?.position = position! + SCNVector3(0, 0.01, 0)
