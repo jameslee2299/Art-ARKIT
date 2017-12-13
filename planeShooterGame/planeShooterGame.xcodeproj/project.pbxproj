@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7A04D1391FCE7B9F0084AB35 /* plane shooter game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "plane shooter game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A04D1391FCE7B9F0084AB35 /* planeShooterGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = planeShooterGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A04D13C1FCE7B9F0084AB35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A04D13E1FCE7B9F0084AB35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7A04D1411FCE7B9F0084AB35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -42,7 +42,7 @@
 		7A04D1301FCE7B9E0084AB35 = {
 			isa = PBXGroup;
 			children = (
-				7A04D13B1FCE7B9F0084AB35 /* plane shooter game */,
+				7A04D13B1FCE7B9F0084AB35 /* planeShooterGame */,
 				7A04D13A1FCE7B9F0084AB35 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,12 +50,12 @@
 		7A04D13A1FCE7B9F0084AB35 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7A04D1391FCE7B9F0084AB35 /* plane shooter game.app */,
+				7A04D1391FCE7B9F0084AB35 /* planeShooterGame.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7A04D13B1FCE7B9F0084AB35 /* plane shooter game */ = {
+		7A04D13B1FCE7B9F0084AB35 /* planeShooterGame */ = {
 			isa = PBXGroup;
 			children = (
 				7AB442551FD0903600DD3617 /* textures */,
@@ -67,15 +67,15 @@
 				7A04D1481FCE7B9F0084AB35 /* Info.plist */,
 				7A2278891FCE94A200AAEC25 /* art.scnassets */,
 			);
-			path = "plane shooter game";
+			path = planeShooterGame;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7A04D1381FCE7B9E0084AB35 /* plane shooter game */ = {
+		7A04D1381FCE7B9E0084AB35 /* planeShooterGame */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7A04D14B1FCE7B9F0084AB35 /* Build configuration list for PBXNativeTarget "plane shooter game" */;
+			buildConfigurationList = 7A04D14B1FCE7B9F0084AB35 /* Build configuration list for PBXNativeTarget "planeShooterGame" */;
 			buildPhases = (
 				7A04D1351FCE7B9E0084AB35 /* Sources */,
 				7A04D1361FCE7B9E0084AB35 /* Frameworks */,
@@ -85,9 +85,9 @@
 			);
 			dependencies = (
 			);
-			name = "plane shooter game";
+			name = planeShooterGame;
 			productName = "plane shooter game";
-			productReference = 7A04D1391FCE7B9F0084AB35 /* plane shooter game.app */;
+			productReference = 7A04D1391FCE7B9F0084AB35 /* planeShooterGame.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -106,7 +106,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7A04D1341FCE7B9E0084AB35 /* Build configuration list for PBXProject "plane shooter game" */;
+			buildConfigurationList = 7A04D1341FCE7B9E0084AB35 /* Build configuration list for PBXProject "planeShooterGame" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -119,7 +119,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7A04D1381FCE7B9E0084AB35 /* plane shooter game */,
+				7A04D1381FCE7B9E0084AB35 /* planeShooterGame */,
 			);
 		};
 /* End PBXProject section */
@@ -284,7 +284,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2NDRFS385B;
-				INFOPLIST_FILE = "plane shooter game/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/planeShooterGame/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "federal-way.plane-shooter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -299,7 +300,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2NDRFS385B;
-				INFOPLIST_FILE = "plane shooter game/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/planeShooterGame/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "federal-way.plane-shooter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -311,7 +313,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7A04D1341FCE7B9E0084AB35 /* Build configuration list for PBXProject "plane shooter game" */ = {
+		7A04D1341FCE7B9E0084AB35 /* Build configuration list for PBXProject "planeShooterGame" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7A04D1491FCE7B9F0084AB35 /* Debug */,
@@ -320,7 +322,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7A04D14B1FCE7B9F0084AB35 /* Build configuration list for PBXNativeTarget "plane shooter game" */ = {
+		7A04D14B1FCE7B9F0084AB35 /* Build configuration list for PBXNativeTarget "planeShooterGame" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7A04D14C1FCE7B9F0084AB35 /* Debug */,
