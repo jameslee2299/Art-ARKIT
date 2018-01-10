@@ -21,13 +21,10 @@ class ViewController: UIViewController {
     let configuration = ARWorldTrackingConfiguration()
     var planeScene: SCNScene?
     var planeNode: SCNNode?
-    var alienScene: SCNScene?
-    var alienNode: SCNNode?
     let timeInterval = 0.018
     var aliens : [SCNNode] = []
     let alienSpeed : Float = 0.3
     let planeSpeed : Float = 1.0
-    var id = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,18 +49,10 @@ class ViewController: UIViewController {
         if forward == 1 {
             planeNode?.position = planeNode!.position + SCNVector3(planeNode!.worldTransform.m21 * -1.0 * planeSpeed, planeNode!.worldTransform.m22 * -1.0 * planeSpeed, planeNode!.worldTransform.m23 * -1.0 * planeSpeed)
         } //just for testing
-        if id != 0 {
-            for i in 0 ..< id {
-                let tempNode = self.sceneView.scene.rootNode.childNode(withName: "alien" + String(i), recursively:true)
-                tempNode?.look(at: planeNode!.position)
-                tempNode?.runAction(SCNAction.move(by: SCNVector3(tempNode!.worldTransform.m31 * -1.0 * alienSpeed, tempNode!.worldTransform.m32 * -1.0 * alienSpeed, tempNode!.worldTransform.m33 * -1.0 * alienSpeed), duration: 0.015))
-            }
-        }
-        /**/
-        //for child in aliens {
-            //child.runAction(SCNAction.move(by: SCNVector3(child.worldTransform.m31 * -1.0 * alienSpeed, child.worldTransform.m32 * -1.0 * alienSpeed, child.worldTransform.m33 * -1.0 * alienSpeed), duration: 0.015))
+        /*for child in aliens {
+            child.runAction(SCNAction.move(by: SCNVector3(child.worldTransform.m31 * -1.0 * alienSpeed, child.worldTransform.m32 * -1.0 * alienSpeed, child.worldTransform.m33 * -1.0 * alienSpeed), duration: 0.015))
             //.position = child.position + SCNVector3(child.worldTransform.m31 * -1.0 * alienSpeed, child.worldTransform.m32 * -1.0 * alienSpeed, child.worldTransform.m33 * -1.0 * alienSpeed)
-        //}
+        }*/
     }
     
     func addPlaneNode() {
@@ -80,18 +69,15 @@ class ViewController: UIViewController {
     
     func addAlienNode() {
         if planeNodeSet {
-            alienScene = SCNScene(named: "art.scnassets/alien.scn")
-            let name : String = "alien" + String(id)
-            alienNode = alienScene?.rootNode.childNode(withName: "alien", recursively: false)
+            let alienScene = SCNScene(named: "art.scnassets/alien.scn")
+            let alienNode = alienScene?.rootNode.childNode(withName: "alien", recursively: false)
             alienNode?.position = SCNVector3(self.randomLocationGenerator(firstNum: -1,secondNum: 1),
                                              self.randomLocationGenerator(firstNum: -1,secondNum: 1),
                                              self.randomLocationGenerator(firstNum: -1,secondNum: 1))
             alienNode?.scale = SCNVector3(0.01, 0.01, 0.01)
             let constraint = SCNLookAtConstraint.init(target: planeNode!)
             alienNode?.constraints = [constraint]
-            alienNode?.name = name
-            id = id + 1
-            //aliens.append(alienNode!)
+            aliens.append(alienNode!)
             self.sceneView.scene.rootNode.addChildNode(alienNode!)
         }
     }
