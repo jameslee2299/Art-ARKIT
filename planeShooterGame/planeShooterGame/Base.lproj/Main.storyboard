@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="plane_shooter_game" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="planeShooterGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -121,6 +121,20 @@
                                     <action selector="planeForwardButtonUp:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="NE8-nq-RZ4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2K-P0-mOS">
+                                <rect key="frame" x="163" y="520" width="49" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Acd-JP-6JM"/>
+                                    <constraint firstAttribute="width" constant="49" id="bAu-Ge-77K"/>
+                                </constraints>
+                                <state key="normal" title="FIRE!">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="shootBullet:" destination="BYZ-38-t0r" eventType="touchDown" id="XtC-GZ-MzX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -131,7 +145,9 @@
                             <constraint firstItem="IDv-Ue-Sa8" firstAttribute="top" secondItem="kip-qe-Sme" secondAttribute="bottom" constant="8" id="K3G-Cn-2La"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3vN-QK-EFY" secondAttribute="trailing" constant="20" id="NyI-zx-IVg"/>
                             <constraint firstItem="PTJ-5v-E9c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="OTb-Od-khR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="K2K-P0-mOS" secondAttribute="trailing" constant="163" id="XcI-vu-gyK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FGT-jO-hyb" secondAttribute="bottom" constant="53" id="aeB-R8-JmB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="K2K-P0-mOS" secondAttribute="bottom" constant="117" id="bLN-In-GQN"/>
                             <constraint firstItem="8sU-1q-uV9" firstAttribute="leading" secondItem="kip-qe-Sme" secondAttribute="trailing" constant="8" id="jMH-CS-nOZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IDv-Ue-Sa8" secondAttribute="bottom" constant="25" id="oWm-oh-jbr"/>
                             <constraint firstItem="PTJ-5v-E9c" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uTK-QC-Ccc"/>

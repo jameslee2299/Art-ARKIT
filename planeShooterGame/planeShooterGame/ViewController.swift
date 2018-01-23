@@ -27,7 +27,8 @@ class ViewController: UIViewController {
     //var aliens : [SCNNode] = []
     let alienSpeed : Float = 0.3
     let planeSpeed : Float = 1.0
-     var id = 0
+    var bulletPower : Float = 25.0
+    var id = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,13 +88,32 @@ class ViewController: UIViewController {
                                              self.randomLocationGenerator(firstNum: -1,secondNum: 1),
                                              self.randomLocationGenerator(firstNum: -1,secondNum: 1))
             alienNode?.scale = SCNVector3(0.01, 0.01, 0.01)
-            let constraint = SCNLookAtConstraint.init(target: planeNode!)
-            alienNode?.constraints = [constraint]
+            //let constraint = SCNLookAtConstraint.init(target: planeNode!)
+            //alienNode?.constraints = [constraint]
             alienNode?.name = name
             id = id + 1
             self.sceneView.scene.rootNode.addChildNode(alienNode!)
         }
     }
+    
+    @IBAction func shootBullet(_ sender: Any) {
+        shootBullet()
+    }
+    
+    func shootBullet() {
+        if planeNodeSet {
+            let bullet = SCNNode(geometry: SCNSphere(radius:0.005))
+            bullet.geometry?.firstMaterial?.diffuse.contents = UIColor.red
+            bullet.position = planeNode!.position
+            let body = SCNPhysicsBody(type: .dynamic, shape: SCNPhysicsShape(node: bullet, options: nil))
+            body.isAffectedByGravity = false
+            bullet.physicsBody = body
+            //bullet.physicsBody?.velocity = SCNVector3(planeNode!.worldTransform.m21 * -1.0 * bulletPower, planeNode!.worldTransform.m22 * -1.0 * bulletPower, planeNode!.worldTransform.m23 * -1.0 * bulletPower)
+            bullet.physicsBody?.applyForce(SCNVector3(planeNode!.worldTransform.m21 * -1.0 * bulletPower, planeNode!.worldTransform.m22 * -1.0 * bulletPower, planeNode!.worldTransform.m23 * -1.0 * bulletPower), asImpulse: true)
+            self.sceneView.scene.rootNode.addChildNode(bullet)
+        }
+    }
+    
     //var tempNode = self.sceneView.scene.rootNode.childNode(withName: "plane", recursively:true)
     //this actually gets the plane within the scope
     
